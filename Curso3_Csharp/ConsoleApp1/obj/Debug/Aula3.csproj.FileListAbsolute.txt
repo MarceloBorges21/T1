@@ -1,0 +1,7 @@
+C:\Users\stag030\Repositorio GIT\T1\Curso3_Csharp\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\stag030\Repositorio GIT\T1\Curso3_Csharp\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\stag030\Repositorio GIT\T1\Curso3_Csharp\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\stag030\Repositorio GIT\T1\Curso3_Csharp\ConsoleApp1\obj\Debug\Aula3.csprojAssemblyReference.cache
+C:\Users\stag030\Repositorio GIT\T1\Curso3_Csharp\ConsoleApp1\obj\Debug\Aula3.csproj.CoreCompileInputs.cache
+C:\Users\stag030\Repositorio GIT\T1\Curso3_Csharp\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\stag030\Repositorio GIT\T1\Curso3_Csharp\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
