@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Funcionarios
 {
-    class Diretor
+    public class Diretor : Funcionario
     {
         public string Nome { get; set; }
         public string CPF { get; set; }
@@ -14,7 +14,7 @@ namespace ConsoleApp1.Funcionarios
 
         public double GetBonificacao()
         {
-            return Salario * 0.10;
+            return Salario;
         }
     }
 }
