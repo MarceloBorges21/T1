@@ -15,26 +15,26 @@ namespace ConsoleApp1
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
 
 
-            Funcionario carlos = new Funcionario();           
+            
+            Funcionario carlos = new Funcionario("123");           
             carlos.Nome = "Carlos";
-            carlos.CPF = "123";
             carlos.Salario = 2000;
 
             gerenciador.Registrar(carlos);
 
-            Diretor roberta = new Diretor();
-            roberta.Nome = "Roberta";
-            roberta.CPF = "4321";
+            Diretor roberta = new Diretor("4321");
+            roberta.Nome = "Roberta";          
             roberta.Salario = 5000;
             gerenciador.Registrar(roberta);
-        
+           
             
             Console.WriteLine(carlos.Nome);
-            Console.WriteLine("R$"+carlos.GetBonificacao());
+            Console.WriteLine("10% so sálario R$"+carlos.GetBonificacao());
 
             Console.WriteLine(roberta.Nome);
             Console.WriteLine("R$" + roberta.GetBonificacao());
 
+            Console.WriteLine("Total de funcionarios: " + Funcionario.TotalDeFuncionarios);
             Console.WriteLine("Total de bonificação:  R$" + gerenciador.GetTotalBonificacao());
 
 

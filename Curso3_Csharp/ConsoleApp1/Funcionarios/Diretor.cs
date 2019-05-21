@@ -8,13 +8,15 @@ namespace ConsoleApp1.Funcionarios
 {
     public class Diretor : Funcionario
     {
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public double Salario { get; set; }
-
-        public double GetBonificacao()
+        public Diretor(string cpf) : base(cpf)
         {
-            return Salario;
+
         }
+        public override double GetBonificacao()
+        {
+            return Salario + base.GetBonificacao();
+        }
+
     }
+	
 }
