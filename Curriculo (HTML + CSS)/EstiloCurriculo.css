@@ -1,0 +1,16 @@
+#folha{
+    width:585px;
+    height:842px;
+    border:1px solid black;
+    margin:auto;
+    position:relative;
+  }
+  #nome{
+    text-align:center;
+    
+    font-family:arial;
+  }
+  p{
+    text-align:center;
+    font-family:arial;
+  }
