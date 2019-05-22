@@ -16,27 +16,27 @@ namespace ConsoleApp1
 
 
             
-            Funcionario carlos = new Funcionario("123");           
-            carlos.Nome = "Carlos";
-            carlos.Salario = 2000;
-
+            Funcionario carlos = new Funcionario(1054.00,"123-321-456-07");   //cpf        
+            carlos.Nome = "Carlos";          
             gerenciador.Registrar(carlos);
+            carlos.AumentarSalario();//metodo esta na calsse funcionairio
 
-            Diretor roberta = new Diretor("4321");
+            Diretor roberta = new Diretor("291-124-345-09"); //cpf, salario 
             roberta.Nome = "Roberta";          
-            roberta.Salario = 5000;
             gerenciador.Registrar(roberta);
-           
-            
+            roberta.AumentarSalario();
+
             Console.WriteLine(carlos.Nome);
-            Console.WriteLine("10% so sálario R$"+carlos.GetBonificacao());
+            Console.WriteLine("10% do sálario R$"+carlos.GetBonificacao());
 
             Console.WriteLine(roberta.Nome);
-            Console.WriteLine("R$" + roberta.GetBonificacao());
+            Console.WriteLine("10% do sálario R$" + roberta.GetBonificacao());
 
             Console.WriteLine("Total de funcionarios: " + Funcionario.TotalDeFuncionarios);
             Console.WriteLine("Total de bonificação:  R$" + gerenciador.GetTotalBonificacao());
 
+            Console.WriteLine("Novo sálario do Carlos com 10% de aumento R$" + carlos.Salario);
+            Console.WriteLine("Novo sálario da Roberta com 15% de aumento R$" + carlos.Salario);
 
             Console.ReadKey();
         }
