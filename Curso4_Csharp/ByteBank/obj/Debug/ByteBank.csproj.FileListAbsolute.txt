@@ -1,0 +1,7 @@
+C:\Users\stag030\Repositorio GIT\T1\Curso4_Csharp\ByteBank\bin\Debug\ByteBank.exe.config
+C:\Users\stag030\Repositorio GIT\T1\Curso4_Csharp\ByteBank\bin\Debug\ByteBank.exe
+C:\Users\stag030\Repositorio GIT\T1\Curso4_Csharp\ByteBank\bin\Debug\ByteBank.pdb
+C:\Users\stag030\Repositorio GIT\T1\Curso4_Csharp\ByteBank\obj\Debug\ByteBank.csprojAssemblyReference.cache
+C:\Users\stag030\Repositorio GIT\T1\Curso4_Csharp\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\stag030\Repositorio GIT\T1\Curso4_Csharp\ByteBank\obj\Debug\ByteBank.exe
+C:\Users\stag030\Repositorio GIT\T1\Curso4_Csharp\ByteBank\obj\Debug\ByteBank.pdb
