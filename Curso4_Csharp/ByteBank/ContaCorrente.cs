@@ -1,5 +1,8 @@
 ﻿// using _05_ByteBank;
 
+using ByteBank.excecoes;
+using System;
+
 namespace ByteBank
 {
     public class ContaCorrente
@@ -8,26 +11,11 @@ namespace ByteBank
         public Cliente Titular { get; set; }
 
         public static int TotalDeContasCriadas { get; private set; }
-
-
-        private int _agencia;
-        public int Agencia
-        {
-            get
-            {
-                return _agencia;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    return;
-                }
-
-                _agencia = value;
-            }
-        }
-        public int Numero { get; set; }
+      
+        public int Agencia { get; }
+            
+        public int Numero { get; }
+         
 
         private double _saldo = 100;
 
@@ -49,25 +37,38 @@ namespace ByteBank
         }
 
 
-        public ContaCorrente(int agencia, int numero)
+        public ContaCorrente(int numeroAgencia, int numeroConta)
         {
-            Agencia = agencia;
-            Numero = numero;
+            if (numeroAgencia <= 0)  
+            {
+                throw new ArgumentException("O argumento agencia deve ser maior que zero.", nameof(numeroAgencia)) ;
+            }
+            if(numeroConta <= 0)
+            {
+                throw new ArgumentException("O argumento numero deve ser maior que zero.", nameof(numeroConta));
+            }
+            Agencia = numeroAgencia;
+            Numero = numeroConta;
 
-            TaxaOperacao = 30 / TotalDeContasCriadas;
             TotalDeContasCriadas++;
+            TaxaOperacao = 30 / TotalDeContasCriadas;
         }
 
 
-        public bool Sacar(double valor)
+        public void Sacar(double valor)
         {
+            if(valor < 0)
+            {
+                throw new ArgumentException("Valor invalido para o saque." , nameof(valor));
+            }
+
             if (_saldo < valor)
             {
-                return false;
+                throw new SaldoInsufucienteException(_saldo, valor);
             }
 
             _saldo -= valor;
-            return true;
+           
         }
 
         public void Depositar(double valor)
@@ -76,16 +77,16 @@ namespace ByteBank
         }
 
 
-        public bool Transferir(double valor, ContaCorrente contaDestino)
+        public void Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (_saldo < valor)
+            if (valor < 0)
             {
-                return false;
+                throw new ArgumentException("Valor invalido para a transferencia.", nameof(valor));
             }
 
-            _saldo -= valor;
+            Sacar(valor);
             contaDestino.Depositar(valor);
-            return true;
+            
         }
     }
 }
