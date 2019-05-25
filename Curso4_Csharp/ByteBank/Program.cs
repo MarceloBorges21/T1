@@ -11,31 +11,23 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            try
-            {
-                ContaCorrente conta = new ContaCorrente(456, 4578420);
-                ContaCorrente conta2 = new ContaCorrente(456, 44420);
+			try
+			{
+				ContaCorrente conta1 = new ContaCorrente(4564, 789684);
+				ContaCorrente conta2 = new ContaCorrente(7891, 456794);
+		
+				conta1.Sacar(10000);
+			}
+			catch (OperacaoFinanceiraException e)
+			{
+				Console.WriteLine(e.Message);
+				Console.WriteLine(e.StackTrace);
+			}
 
-                conta2.Transferir(-10, conta);
-                conta.Depositar(50);
-                Console.WriteLine(conta.Saldo);
-                conta.Sacar(-500);
-            }
-            catch (SaldoInsufucienteException ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("Exceção para saldo insufuciente");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("Exceção para saldo augumento invalido");
-            }
-            Console.ReadKey();
+			Console.ReadKey();
         }
 
-        // Teste com a cadeia de chamada:
-        // Metodo -> TestaDivisao -> Dividir
+             
         private static void Metodo()
         {
             TestaDivisao(0);

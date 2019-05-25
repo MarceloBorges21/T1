@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="ContaCorrente.cs" />
+    <Compile Include="excecoes\LeitorDeArquivo.cs" />
+    <Compile Include="excecoes\OperacaoFinanceiraException.cs" />
     <Compile Include="excecoes\SaldoInsufucienteException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
