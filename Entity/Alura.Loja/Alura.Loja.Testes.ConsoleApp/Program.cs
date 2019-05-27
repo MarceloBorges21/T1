@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,34 +14,31 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
-			using (var contexto = new LojaContext())
-			{
-				var produtos = contexto.Produtos.ToList();
+            var p1 = new Produto() {Nome = "Suco de frutas", Categoria = "Bebidas", PrecoUnitario = 1.00, Unidade = "Litros" };
+            var p2 = new Produto() { Nome = "Café", Categoria = "Bebidas", PrecoUnitario =7.80, Unidade = "Gramas" };
+            var p3 = new Produto() { Nome = "Bolacha", Categoria = "Alimento", PrecoUnitario = 2.00, Unidade = "Gramas" };
 
-				ExibeEntries(contexto.ChangeTracker.Entries());
+            var promocaoDePascoa = new Promocao();
+            promocaoDePascoa.Descricao = "Páscoa Feliz";
+            promocaoDePascoa.DataInicio = DateTime.Now;
+            promocaoDePascoa.DataTermino = DateTime.Now.AddMonths(3);
 
-				var novoProduto = new Produto()
-				{
-					Nome = "Papel higienico",
-					Categoria = "Higiene",
-					Preco = 5.99
-				};
-
-				contexto.Produtos.Add(novoProduto);
-
-				contexto.Produtos.Remove(novoProduto);
-
-				ExibeEntries(contexto.ChangeTracker.Entries());
-
-				//contexto.SaveChanges();
-
-				ExibeEntries(contexto.ChangeTracker.Entries());
-
-				var entry = contexto.Entry(novoProduto);
-				Console.WriteLine("\n\n" + entry.Entity.ToString() + " - " + entry.State);
+            promocaoDePascoa.IncluiProduto(p1);
+            promocaoDePascoa.IncluiProduto(p2);
+            promocaoDePascoa.IncluiProduto(p3);
 
 
-			}
+            using (var contexto = new LojaContext())
+            {
+                var promocao = contexto.Promocoes.Find(3);
+
+                contexto.Promocoes.Remove(promocao);
+
+                ExibeEntries(contexto.ChangeTracker.Entries());
+
+               // contexto.SaveChanges();
+               
+            }
 
 			Console.ReadKey();
         }
