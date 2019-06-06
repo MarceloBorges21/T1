@@ -1,0 +1,48 @@
+﻿
+    <h2><b>Cadastro produtos</b></h2>
+    <br />
+    <div class="col-lg-6">
+        <form action="/Produto/Adiciona" method="post" class="form-horizontal" id="form">
+            @Html.AntiForgeryToken()
+            @Html.ValidationMessage("produto.Invalido")
+            <div class="form-group">
+                <label for="nome" class="col-sm-2 control-label">Nome</label>
+                <div class="col-sm-10">
+                    <input id="nome" class="form-control" name="produto.Nome" value="@ViewBag.Produto.Nome" />
+                    @Html.ValidationMessage("produto.Nome")
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="preco" class="col-sm-2 control-label">Preço</label>
+                <div class="col-sm-10">
+                    <input id="preco" class="form-control" name="produto.Preco"  value="@ViewBag.Produto.Preco" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="quantidade" class="col-sm-2 control-label">Quantidade</label>
+                <div class="col-sm-10">
+                    <input id="quantidade" class="form-control" name="produto.Quantidade"  value="@ViewBag.Produto.Quantidade" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descricao" class="col-sm-2 control-label">Descrição</label>
+                <div class="col-sm-10">
+                    <input id="descricao" class="form-control" name="produto.Descricao"  value="@ViewBag.Produto.Descricao"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="categoria" class="col-sm-2 control-label">Categoria</label>
+                <div class="col-sm-10">
+                    <select id="categoria" name="produto.CategoriaId" class="form-control">
+                        @foreach (var categoria in ViewBag.Categorias)
+                        {
+                            <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
+                                @categoria.Nome
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
