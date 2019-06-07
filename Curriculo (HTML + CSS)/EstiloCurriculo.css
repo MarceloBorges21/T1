@@ -16,7 +16,7 @@ body{
   margin-top:10px;
   font-family:arial;
 }
-#dadosPessoal{
+#dados{
   font-family:arial;
 }
 #subtitulo{
@@ -44,7 +44,7 @@ text-align:center;
 }
 .divPessoal{
   position:absolute;
-  margin-top:10px;
+  margin-top:19px;
   margin-left:15px;
 }
 #linha{
@@ -53,10 +53,44 @@ text-align:center;
   width:110%;
   height:2px;
   color:black;
-  background:black;
+  background:black;  
 }
 .divFormacao{
-  margin-top:136px;
+  margin-top:160px;
   position:absolute;
   margin-left:15px;
+}
+#linha2{
+  margin-left:-15px;
+  margin-top:-25px;
+  width:133%;
+  height:2px;
+  color:black;
+  background:black;  
+}
+.divCurso{
+  margin-top:280px;
+  position:absolute;
+  margin-left:15px;
+}
+#linha3{
+  margin-left:-15px;
+  margin-top:-25px;
+  width:127%;
+  height:2px;
+  color:black;
+  background:black;  
+}
+.divExperiencia{
+  margin-top:490px;
+  position:absolute;
+  margin-left:15px;
+}
+#linha4{
+  margin-left:-15px;
+  margin-top:-25px;
+  width:197%;
+  height:2px;
+  color:black;
+  background:black;  
 }
